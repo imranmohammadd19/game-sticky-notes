@@ -54,11 +54,13 @@ const App: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen p-8 bg-gradient-to-b from-red-900 to-red-800">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-center text-yellow-400 animate-bounce-hover">Game Sticky Notes</h1>
+    <div className="min-h-screen p-8 bg-gradient-to-b from-red-900 to-red-800 relative">
+      <div className="content-wrapper max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-8 text-center text-yellow-400 animate-bounce-hover">
+          Game Sticky Notes
+        </h1>
         
-        <div className="bg-yellow-50 p-6 rounded-lg shadow-2xl mb-8 animate-slide-in hover-scale">
+        <div className="bg-yellow-50 p-6 rounded-lg batman-shadow mb-8 animate-slide-in hover-scale backdrop-blur-sm bg-opacity-95">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">
             {editingNote ? 'Edit Note' : 'Create New Note'}
           </h2>
@@ -68,7 +70,7 @@ const App: React.FC = () => {
           />
         </div>
 
-        <div className="bg-yellow-50 p-6 rounded-lg shadow-2xl animate-fade-in hover-scale">
+        <div className="bg-yellow-50 p-6 rounded-lg batman-shadow animate-fade-in hover-scale backdrop-blur-sm bg-opacity-95">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">Search Notes</h2>
           <SearchBar
             searchQuery={searchQuery}
