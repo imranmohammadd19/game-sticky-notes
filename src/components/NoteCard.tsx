@@ -10,23 +10,23 @@ interface NoteCardProps {
 
 const NoteCard: React.FC<NoteCardProps> = ({ note, onEdit, onDelete }) => {
   return (
-    <div className="bg-yellow-200 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
-      <h3 className="text-lg font-bold mb-2 break-words">{note.title}</h3>
+    <div className="bg-yellow-400 p-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col animate-fade-in hover-scale hover-rotate">
+      <h3 className="text-lg font-bold mb-2 break-words text-gray-800">{note.title}</h3>
       <p className="text-gray-700 mb-4 flex-grow break-words">{note.content}</p>
       <div className="flex justify-between items-center mt-auto">
-        <span className="text-xs text-gray-500">{new Date(note.createdAt).toLocaleDateString()}</span>
+        <span className="text-xs text-gray-600">{new Date(note.createdAt).toLocaleDateString()}</span>
         <div className="flex space-x-2">
           <button
             onClick={() => onEdit(note)}
-            className="p-1 hover:bg-yellow-300 rounded transition-colors duration-200"
+            className="p-2 bg-yellow-500 hover:bg-yellow-600 rounded transition-colors duration-200 animate-bounce-hover"
           >
-            <PencilIcon className="h-5 w-5 text-gray-600" />
+            <PencilIcon className="h-5 w-5 text-white" />
           </button>
           <button
             onClick={() => onDelete(note.id)}
-            className="p-1 hover:bg-yellow-300 rounded transition-colors duration-200"
+            className="p-2 bg-red-500 hover:bg-red-600 rounded transition-colors duration-200 animate-bounce-hover"
           >
-            <TrashIcon className="h-5 w-5 text-gray-600" />
+            <TrashIcon className="h-5 w-5 text-white" />
           </button>
         </div>
       </div>
